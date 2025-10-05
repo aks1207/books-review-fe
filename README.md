@@ -238,8 +238,6 @@ Your brother needs to implement these endpoints:
 
 ## 🗄️ Database Tables Needed
 
-Your brother should create these tables:
-
 1. **users** - id, name, email, password (hashed), avatar, bio, role, created_at
 2. **books** - id, title, author, isbn, genre, description, cover_image, publication_year, created_at
 3. **reviews** - id, book_id, user_id, rating, text, spoiler, created_at, updated_at
@@ -262,16 +260,6 @@ Your brother should create these tables:
 Done! Your frontend will be live at `https://your-project.vercel.app`
 
 ### Deploy Backend
-
-Your brother can deploy the backend to:
-- **Railway** (free tier available)
-- **Render** (free tier available)
-- **Heroku** (paid)
-- **AWS/DigitalOcean** (more control, paid)
-
-## 📚 Learning Concepts Covered
-
-This frontend helps your brother learn:
 
 ### Backend Development
 - **Authentication**: JWT tokens, password hashing, session management
@@ -332,7 +320,7 @@ npm run lint
 
 ## 🤝 Support
 
-If your brother has questions about:
+Questions about:
 - What data format to return
 - How authentication should work
 - What database structure to use
