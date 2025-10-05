@@ -11,7 +11,7 @@ export default function BookDetailPage() {
   const params = useParams();
   const bookId = params.id as string;
 
-  const [book, setBook] = useState(mockBooks.find((b) => b.id === bookId));
+  const [book] = useState(mockBooks.find((b) => b.id === bookId));
   const [reviews, setReviews] = useState(mockReviews.filter((r) => r.bookId === bookId));
   const [showReviewForm, setShowReviewForm] = useState(false);
   const [reviewForm, setReviewForm] = useState({
@@ -19,7 +19,7 @@ export default function BookDetailPage() {
     text: '',
     spoiler: false,
   });
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<{ id: string; name: string; email: string; role: string } | null>(null);
 
   useEffect(() => {
     const userData = localStorage.getItem('user');
@@ -66,6 +66,7 @@ export default function BookDetailPage() {
         likes: 0,
         isLiked: false,
         createdAt: new Date().toISOString(),
+        comments: [],
       };
       setReviews([newReview, ...reviews]);
       setShowReviewForm(false);

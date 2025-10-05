@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<{ id: string; name: string; email: string; role: string } | null>(null);
 
   useEffect(() => {
     // Check if user is logged in

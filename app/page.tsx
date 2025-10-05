@@ -8,11 +8,11 @@ import { mockBooks } from '@/lib/mockData';
 // import { booksAPI } from '@/lib/api';
 
 export default function HomePage() {
-  const [trendingBooks, setTrendingBooks] = useState(mockBooks.slice(0, 5));
-  const [topRatedBooks, setTopRatedBooks] = useState(
+  const [trendingBooks] = useState(mockBooks.slice(0, 5));
+  const [topRatedBooks] = useState(
     [...mockBooks].sort((a, b) => b.averageRating - a.averageRating).slice(0, 5)
   );
-  const [recentBooks, setRecentBooks] = useState(
+  const [recentBooks] = useState(
     [...mockBooks].sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()).slice(0, 5)
   );
 

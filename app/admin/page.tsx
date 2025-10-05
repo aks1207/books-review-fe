@@ -7,14 +7,14 @@ import { Users, BookOpen, Star, TrendingUp, Shield, Ban } from 'lucide-react';
 
 export default function AdminPage() {
   const router = useRouter();
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<{ id: string; name: string; email: string; role: string } | null>(null);
   const [activeTab, setActiveTab] = useState<'analytics' | 'users' | 'books'>('analytics');
   const [users, setUsers] = useState([
     { id: '1', name: 'John Doe', email: 'john@example.com', role: 'user', status: 'active', reviewCount: 12 },
     { id: '2', name: 'Jane Smith', email: 'jane@example.com', role: 'user', status: 'active', reviewCount: 8 },
     { id: '3', name: 'Bob Johnson', email: 'bob@example.com', role: 'moderator', status: 'active', reviewCount: 25 },
   ]);
-  const [analytics, setAnalytics] = useState({
+  const [analytics] = useState({
     totalUsers: 5000,
     totalBooks: 1200,
     totalReviews: 15000,

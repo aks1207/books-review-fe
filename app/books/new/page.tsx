@@ -8,7 +8,7 @@ import { genres } from '@/lib/mockData';
 
 export default function NewBookPage() {
   const router = useRouter();
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<{ id: string; name: string; email: string; role: string } | null>(null);
   const [formData, setFormData] = useState({
     title: '',
     author: '',
@@ -17,7 +17,7 @@ export default function NewBookPage() {
     description: '',
     publicationYear: new Date().getFullYear(),
   });
-  const [coverImage, setCoverImage] = useState<File | null>(null);
+  const [, setCoverImage] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -63,8 +63,8 @@ export default function NewBookPage() {
       // Mock success
       alert('Book added successfully! (This is a mock - waiting for backend)');
       router.push('/books');
-    } catch (err: any) {
-      setError(err.response?.data?.message || 'Failed to add book. Please try again.');
+    } catch (err: unknown) {
+      setError((err as { response?: { data?: { message?: string } } }).response?.data?.message || 'Failed to add book. Please try again.');
     } finally {
       setLoading(false);
     }

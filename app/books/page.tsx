@@ -7,12 +7,12 @@ import { mockBooks, genres } from '@/lib/mockData';
 // import { booksAPI } from '@/lib/api';
 
 export default function BooksPage() {
-  const [books, setBooks] = useState(mockBooks);
+  const [books] = useState(mockBooks);
   const [filteredBooks, setFilteredBooks] = useState(mockBooks);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedGenre, setSelectedGenre] = useState('All');
   const [sortBy, setSortBy] = useState('title');
-  const [loading, setLoading] = useState(false);
+  const [loading] = useState(false);
 
   // Fetch books from backend when ready
   useEffect(() => {

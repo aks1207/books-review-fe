@@ -55,8 +55,8 @@ export default function SignupPage() {
 
       router.push('/');
       window.location.reload();
-    } catch (err: any) {
-      setError(err.response?.data?.message || 'Signup failed. Please try again.');
+    } catch (err: unknown) {
+      setError((err as { response?: { data?: { message?: string } } }).response?.data?.message || 'Signup failed. Please try again.');
     } finally {
       setLoading(false);
     }

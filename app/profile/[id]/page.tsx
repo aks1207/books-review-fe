@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
-import { User, Calendar, Star, BookOpen, Edit } from 'lucide-react';
+import { Calendar, BookOpen, Edit } from 'lucide-react';
 import ReviewCard from '@/components/ReviewCard';
 import { mockUser, mockReviews } from '@/lib/mockData';
 // import { usersAPI } from '@/lib/api';
@@ -12,7 +12,7 @@ export default function ProfilePage() {
   const userId = params.id as string;
 
   const [profile, setProfile] = useState(mockUser);
-  const [reviews, setReviews] = useState(mockReviews);
+  const [reviews] = useState(mockReviews);
   const [isOwnProfile, setIsOwnProfile] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [editForm, setEditForm] = useState({
